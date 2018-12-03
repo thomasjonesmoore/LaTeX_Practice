@@ -1,0 +1,132 @@
+\documentclass{article}
+\usepackage{amsfonts,amssymb,amsmath,amsthm}
+\usepackage[margin=1in]{geometry}
+
+\title{CSCI 301, Winter 2018\\Math Exercises \# 3}
+\author{Thomas Jones-Moore}
+\date{Due date:  Tuesday, February 6, midnight.}
+
+\begin{document}
+
+\maketitle
+
+Prove each of the following statements twice, using two different
+methods.  Choose among direct, contrapositive, and contradiction.  You
+are free to choose which two to use.  Explicitly note on each proof which
+method you are using, and be explicit about the logical form of your
+proposition, its constituent propositions, and any negations you
+make.
+
+
+\begin{enumerate}
+\item If two integers have the same parity, then their sum is even.
+  \begin{description}
+    \item[First proof, method:] Contrapositive
+    \begin{proof} Assume $x$ and $y$ have opposte parity, with $x$ being even and $y$ being odd. \\ There are integers $k$ and $j$, for which $x=2k$ and $y=2j+1$ by definition of even and odd numbers. 
+    \begin{alignat*}{2}
+    	x+y &= 2k+2j+1 \\
+        &=2(k+j)+1
+    \end{alignat*}
+    $2(k+j)+1$ is an odd number by definition.\\
+    Therefore, if two integers have different parity, then their sum is odd, proving that if two integers have the same parity then their sum is even. 
+    \end{proof}
+    
+    \item[Second proof, method:] Direct
+  \end{description}
+  \begin{proof} Assume $x$ and $y$ have the same parity. \\ \\
+  Case 1. $x$ and $y$ are even. \\
+  \hspace*{6mm} There exists integers $a$ and $b$ for which $x=2a$ and $y=2b$ by definition of even numbers.
+  \begin{alignat*}{2}
+  x+y &= 2a+2b \\
+  &= 2(a+b)
+  \end{alignat*}
+  By definition of a even number, $2(a+b)$ will always be even. \\
+  Therefore, two integers of the even parity have an even sum. \\
+  \\ Case 2. $x$ and $y$ are odd. \\
+  \hspace*{6mm} There exists integers $a$ and $b$ for which $x=2a+1$ and $y=2b+1$ by definition of even numbers.
+  \begin{alignat*}{2}
+  x+y &= 2a+1+2b+1 \\
+  &= 2(a+b)+2
+  \end{alignat*}
+  By definition of a odd number, $2(a+b)+2$ will always be even. \\
+  Therefore, two integers of the odd parity will always be even.
+  \end{proof}
+  
+\item Suppose $a\in\mathbb{Z}$.  If $a^2$ is not divisible by 4,
+  then $a$ is odd.
+  \begin{description}
+    \item[First proof, method:] Contrapositive
+    \begin{proof}
+    Suppose $a\in\mathbb{Z}$ and even. By definition of an even integer, let some integer $n$ allow $a=2n$.
+    \begin{alignat*}{2}
+    a^2 &= (2n)^2 
+    &= 4n^2
+    \end{alignat*}
+    Therefore, knowing $n^2\in\mathbb{Z}$, $a^2$ is divisible by 4.
+    \end{proof}
+    \item[Second proof, method:] Direct
+    \begin{proof}
+    	Suppose $a^2$ is not divisible by 4. \\
+        Everything divisible by 4 is even. \\
+        $4+4+...+n$ for any integer $n$ will always be even. \\
+        
+    
+    	Therefore, $a$ is odd.
+    \end{proof}
+  \end{description}
+
+\item Suppose $a,b\in\mathbb{Z}$.  If $4\mid (a^2+b^2)$, then $a$ and
+  $b$ are not both odd.
+  \begin{description}
+    \item[First proof, method:] Contradiction
+    \begin{proof} Suppose $a=2j+1$ and $b=2i+1$ for some integers $j,i$. \\
+    \begin{alignat*}{2}
+    a^2 &= (2j+1)^2 \\
+    &= 4j^2+4j+1 \\
+    b^2 &= (2j+1)^2 \\
+    &= 4i^2+4i+1 \\
+    &= a^2+b^2=4i^2+4i+4j^2+4j+2 \\
+    \end{alignat*}
+    We must now show this cannot be divided by 4
+    \begin{alignat*}{2}
+    \frac{4i^2+4i+4j^2+4j+2}{4} 
+    = i^2 + i+j^2+j+\frac{1}{2}
+    \end{alignat*}
+    Knowing $i,j\in\mathbb{N}$, this cannot be resolved to an integer. \\
+    Therefore, if $a,b$ are odd, $(a^2+b^2)$ cannot be divided by 4.
+    
+    \end{proof}
+    \item[Second proof, method:] Contrapositive
+    \begin{proof}
+    Suppose $a$ and $b$ are odd. Assume for a integer $q$ and $w$: $a=2q+1$, $b=2w+1$. \\
+    $a^2+b^2=4q^2+4q+1+4w^2+4w+1=4(q^2+q+w^2+w)+2$ \\ 
+    Cannot have both $(a^2+b^2) \equiv 0 \mod 4$ \\ AND  \\$(a^2+b^2) \equiv 2 \mod 4$
+    \end{proof}
+  \end{description}
+
+\item Suppose $a,b,c\in\mathbb{Z}$.  If $a^2+b^2=c^2$ then $a$ or
+  $b$ is even.
+  \begin{description}
+    \item[First proof, method:] Contradiction
+    \begin{proof}
+    Suppose $a,b$ are odd integers, and $c$ is either odd or even. Assume for a integer $q$ and $w$: $a=2q+1$, $b=2w+1$.\\ Following, $(a^2+b^2)=4(q^2+q+w^2+w)+2$ \\
+    Let $c=2y$ or $c=2y+1$ for integer $y$, and $c^2=4y^2$ or $4(y^2+y)+1$. \\
+    In both cases of $c$, $a^2+b^2=c^2$ does not hold true.
+    
+    \end{proof}
+    \item[Second proof, method:] Contrapositive
+    \begin{proof}
+    Suppose $a=2j+1$ and $b=2i+1$ for some integers $j,i$.
+    \begin{alignat*}{2}
+    a^2+b^2 &= 4(j^2+i^2)+4(j+i)+2 \\
+    &= 2(2(j^2+i^2)+2(j+i)+1) \\
+    &= 2(odd number)
+    \end{alignat*}
+    Therefore, either $a$ or $b$ has to be even.
+    \end{proof}
+  \end{description}
+  
+\end{enumerate}
+
+
+\end{document}
